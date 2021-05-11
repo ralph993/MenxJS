@@ -1,0 +1,30 @@
+{
+  "name": "@menx/cli",
+  "version": "1.0.0",
+  "description": "A lightweight CLI to create APIs and APIs components in an easy way, conected to MongoDB",
+  "main": "src/index.js",
+  "bin": {
+    "@menx/cli": "bin/menx.js",
+    "menx": "bin/menx.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "Rafael Hernandez",
+  "license": "MIT",
+  "dependencies": {
+    "arg": "^5.0.0",
+    "chalk": "^4.1.1",
+    "esm": "^3.2.25",
+    "execa": "^5.0.0",
+    "inquirer": "^8.0.0",
+    "listr": "^0.14.3",
+    "ncp": "^2.0.0",
+    "path": "^0.12.7",
+    "pkg-install": "^1.0.0",
+    "util": "^0.10.4"
+  }
+}
