@@ -1,5 +1,5 @@
 {
-  "name": "@menx/cli",
+  "name": "menxjs",
   "version": "1.0.1",
   "description": "A lightweight CLI to create APIs and APIs components in an easy way, conected to MongoDB",
   "main": "src/cli.js",
