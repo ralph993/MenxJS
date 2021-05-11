@@ -2,7 +2,7 @@
   "name": "@menx/cli",
   "version": "1.0.0",
   "description": "A lightweight CLI to create APIs and APIs components in an easy way, conected to MongoDB",
-  "main": "src/index.js",
+  "main": "src/cli.js",
   "bin": {
     "@menx/cli": "bin/menx.js",
     "menx": "bin/menx.js"

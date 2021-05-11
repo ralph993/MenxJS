@@ -1,0 +1,29 @@
+[
+  {
+    "type": "input",
+    "message": "preject ",
+    "name": "name",
+    "default": "new-api"
+  },
+  {
+    "type": "input",
+    "message": "author:",
+    "name": "author"
+  },
+  {
+    "type": "input",
+    "message": "license:",
+    "name": "license",
+    "default": "MIT"
+  },
+  {
+    "type": "input",
+    "message": "description:",
+    "name": "desc"
+  },
+  {
+    "type": "input",
+    "message": "mongo URI:",
+    "name": "mUri"
+  }
+]
