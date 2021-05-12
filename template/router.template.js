@@ -7,8 +7,6 @@ const {  } = require("./${apiName}.middleware");
 
 router.get("/", index);
 
-
-
 module.exports = router;
 `;
 }

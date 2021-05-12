@@ -10,39 +10,51 @@ const cwd = process.cwd();
 const apiDir = `${cwd}/src/api`;
 
 export async function generateApiComponent() {
-  const { apiName } = await inquirer.prompt({
-    type: "input",
-    message: "Component Name",
-    name: "apiName",
-  });
+  try {
+    const confirmAnswerValidator = async (input) => {
+      if (!input) {
+        return "You need to name the component";
+      }
+      return true;
+    };
 
-  const task = new Listr([
-    {
-      title: "Generate component",
-      task: () => mkdirSync(`${apiDir}/${apiName}`),
-    },
-    {
-      title: "Generate controller",
-      task: () => generateController(apiDir, apiName),
-    },
-    {
-      title: "Generate middleware",
-      task: () => generateMiddleware(apiDir, apiName),
-    },
-    {
-      title: "Generate router",
-      task: () => generateRouter(apiDir, apiName),
-    },
-    {
-      title: "Generate schema",
-      task: () => generateSchema(apiDir, apiName),
-    },
-  ]);
+    const { apiName } = await inquirer.prompt({
+      type: "input",
+      message: "component name:",
+      name: "apiName",
+      validate: confirmAnswerValidator,
+    });
 
-  await task.run();
+    const task = new Listr([
+      {
+        title: "Generate component",
+        task: () => mkdirSync(`${apiDir}/${apiName}`),
+      },
+      {
+        title: "Generate controller",
+        task: () => generateController(apiDir, apiName),
+      },
+      {
+        title: "Generate middleware",
+        task: () => generateMiddleware(apiDir, apiName),
+      },
+      {
+        title: "Generate router",
+        task: () => generateRouter(apiDir, apiName),
+      },
+      {
+        title: "Generate schema",
+        task: () => generateSchema(apiDir, apiName),
+      },
+    ]);
 
-  console.log(
-    `%s ${apiName} Successfully generated`,
-    chalk.greenBright.bold("DONE")
-  );
+    await task.run();
+
+    console.log(
+      `%s ${apiName} Successfully generated`,
+      chalk.greenBright.bold("DONE")
+    );
+  } catch (error) {
+    console.log(error);
+  }
 }

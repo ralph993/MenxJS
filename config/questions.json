@@ -1,7 +1,7 @@
 [
   {
     "type": "input",
-    "message": "preject ",
+    "message": "preject name:",
     "name": "name",
     "default": "new-api"
   },
