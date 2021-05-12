@@ -11,7 +11,7 @@ import questions from "../config/questions.json";
 import jsonPack from "../config/config-file.json";
 
 const cwd = process.cwd();
-const templateDir = Path.join(__dirname, "../template");
+const generatorDir = Path.join(__dirname, "../generator");
 const copy = promisify(ncp);
 const access = promisify(fs.access);
 
@@ -20,7 +20,7 @@ function createPackJson(options) {
   jsonPack.author = options.author;
   jsonPack.license = options.license;
   jsonPack.description = options.desc;
-  fs.writeFileSync(`${templateDir}/package.json`, JSON.stringify(jsonPack));
+  fs.writeFileSync(`${generatorDir}/package.json`, JSON.stringify(jsonPack));
 }
 
 async function copyTemplateFiles(from, to) {
@@ -32,7 +32,7 @@ async function copyTemplateFiles(from, to) {
 export async function createProject() {
   try {
     const answers = await inquirer.prompt(questions);
-    await access(templateDir, fs.constants.R_OK);
+    await access(generatorDir, fs.constants.R_OK);
     const task = new Listr([
       {
         title: "Create project file",
@@ -40,7 +40,7 @@ export async function createProject() {
       },
       {
         title: "Copy project files",
-        task: () => copyTemplateFiles(templateDir, `${cwd}/${answers.name}`),
+        task: () => copyTemplateFiles(generatorDir, `${cwd}/${answers.name}`),
       },
       {
         title: "Install Dependencies",
