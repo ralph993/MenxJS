@@ -1,20 +1,5 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const cartSchema = mongoose.Schema(
-  {
-    items: [
-      {
-        id: String,
-        name: String,
-        price: Number,
-        quantity: Number,
-        img: String,
-      },
-    ],
-  },
-  {
-    timestamps: true,
-  }
-);
+const indexSchema = mongoose.Schema({});
 
-module.exports = mongoose.model("Cart", cartSchema);
+module.exports = mongoose.model("Index", indexSchema);

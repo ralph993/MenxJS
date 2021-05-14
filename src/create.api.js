@@ -8,16 +8,15 @@ import { generateRouter } from "../template/router";
 import { generateSchema } from "../template/schema";
 const cwd = process.cwd();
 const apiDir = `${cwd}/src/api`;
+const confirmAnswerValidator = async (input) => {
+  if (!input) {
+    return "You need to name the component";
+  }
+  return true;
+};
 
 export async function generateApiComponent() {
   try {
-    const confirmAnswerValidator = async (input) => {
-      if (!input) {
-        return "You need to name the component";
-      }
-      return true;
-    };
-
     const { apiName } = await inquirer.prompt({
       type: "input",
       message: "component name:",

@@ -4,9 +4,8 @@ import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 import dotenv from "dotenv";
-import _ from "colors";
 import connectDB from "./config/db.js";
-import routes from "./router/index.js";
+import routes from "./routes/index.js";
 
 dotenv.config();
 

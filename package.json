@@ -12,8 +12,8 @@
   },
   "keywords": [
     "cli",
-    "menx",
-    "node"
+    "node",
+    "express"
   ],
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "dependencies": {
     "arg": "^5.0.0",
     "chalk": "^4.1.1",
+    "ejs": "^3.1.6",
     "esm": "^3.2.25",
     "execa": "^5.0.0",
     "inquirer": "^8.0.0",

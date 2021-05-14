@@ -1,0 +1,8 @@
+import express from "express";
+const router = express.Router();
+import { index } from "./<%= apiName %>.controller.js";
+import {} from "./<%= apiName %>.middleware.js";
+
+router.get("/", index);
+
+export default router;

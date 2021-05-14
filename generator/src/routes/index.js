@@ -1,4 +1,4 @@
-import indexRouter from "../api/index/index.route.js";
+import indexRouter from "../api/index/index.router.js";
 
 const routes = [
   {
