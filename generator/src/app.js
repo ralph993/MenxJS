@@ -1,20 +1,24 @@
-const express = require("express");
+import express from "express";
+import chalk from "chalk";
+import path from "path";
+import cookieParser from "cookie-parser";
+import logger from "morgan";
+import dotenv from "dotenv";
+import _ from "colors";
+import connectDB from "./config/db.js";
+import routes from "./router/index.js";
+
+dotenv.config();
+
 const app = express();
-const routes = require("./routes");
-const path = require("path");
-const cookieParser = require("cookie-parser");
-const logger = require("morgan");
-const colors = require("colors");
-const connectDB = require("./config/db");
-require("dotenv").config();
 
 connectDB();
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-//Routes
 for (const route of routes) {
   app.use(route.path, route.component);
 }
@@ -26,4 +30,10 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-module.exports = app;
+app.listen(
+  process.env.PORT || "5000",
+  console.log(
+    `%s App listening port: ${process.env.PORT || "5000"}`,
+    chalk.greenBright.bold("✔")
+  )
+);

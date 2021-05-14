@@ -52,9 +52,9 @@ export async function createProject() {
     ]);
 
     await task.run();
-    console.log("%s Project Ready", chalk.green.bold("DONE"));
-    console.log(chalk.blue.bold(`cd ${answers.name}`));
-    console.log(chalk.blue.bold("npm run dev"));
+    console.log("%s Project Ready ", chalk.greenBright.bold("✔"));
+    console.log(`%s cd ${answers.name} `, chalk.greenBright.bold("✔"));
+    console.log("%s npm run dev ", chalk.greenBright.bold("✔"));
     return true;
   } catch (error) {
     console.log(error);

@@ -1,8 +1,8 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const { helloWord } = require("./index.controller");
-const {} = require("./index.middleware");
+import { helloWord } from "./index.controller.js";
+import {} from "./index.middleware.js";
 
 router.get("/", helloWord);
 
-module.exports = router;
+export default router;

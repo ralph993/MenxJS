@@ -2,16 +2,19 @@
   "name": "",
   "version": "1.0.0",
   "description": "",
+  "main": "src/app.js",
+  "type": "module",
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "start": "node ./src/app",
+    "dev": "nodemon ./src/app"
   },
   "author": "",
-  "license": "",
+  "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "esm": "^3.2.25",
     "express": "~4.16.1",
     "mongoose": "^5.12.2",
     "morgan": "~1.9.1"

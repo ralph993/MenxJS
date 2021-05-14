@@ -1,11 +1,9 @@
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+import chalk from "chalk";
 
-const connectDB = () => {
+export default async function connectDB() {
   try {
-    const uri = "mongodb://localhost:27017/41Street";
+    const uri = process.env.MONGO_URI || "mongodb://localhost:27017/api";
     mongoose.connect(uri, {
       useNewUrlParser: true,
       useCreateIndex: true,
@@ -15,11 +13,12 @@ const connectDB = () => {
 
     const connection = mongoose.connection;
     connection.once("open", () => {
-      console.log("MongoDB connection established good".brightCyan);
+      console.log(
+        "%s MongoDB connection established",
+        chalk.greenBright.bold("✔")
+      );
     });
   } catch (error) {
     console.log(error.red);
   }
-};
-
-module.exports = connectDB;
+}
