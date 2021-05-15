@@ -28,7 +28,7 @@
 ## CLI Usage
 
 ```
- npm i menx -g
+ npm i menxjs -g
 
 ```
 
