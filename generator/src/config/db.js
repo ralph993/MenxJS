@@ -19,6 +19,6 @@ export default async function connectDB() {
       );
     });
   } catch (error) {
-    console.log(error.red);
+    console.log("%s0" + error, chalk.redBright.bold("ERROR"));
   }
 }

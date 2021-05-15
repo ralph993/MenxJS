@@ -6,6 +6,7 @@ import { generateController } from "../template/controller";
 import { generateMiddleware } from "../template/middleware";
 import { generateRouter } from "../template/router";
 import { generateSchema } from "../template/schema";
+import { generateRoutes } from "../template/routes";
 const cwd = process.cwd();
 const apiDir = `${cwd}/src/api`;
 const confirmAnswerValidator = async (input) => {
@@ -40,6 +41,10 @@ export async function generateApiComponent() {
       {
         title: "Generate router",
         task: () => generateRouter(apiDir, apiName),
+      },
+      {
+        title: "Generate routes",
+        task: () => generateRoutes(apiDir, apiName),
       },
       {
         title: "Generate schema",

@@ -1,0 +1,14 @@
+<% routes.forEach((route) => { %>
+import <%= route.router %> from "<%= route.routerPath %>";
+<% }) %>
+const routes = [
+<% routes.forEach((route) => { %>
+    {
+        path:"<%= route.path %>",
+        router:<%= route.router %>
+    },
+<% }) %> 
+]
+
+export default routes;
+    

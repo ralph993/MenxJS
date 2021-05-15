@@ -1,0 +1,7 @@
+[
+  {
+    "path": "/",
+    "router": "indexRouter",
+    "routerPath": "../api/index/index.router.js"
+  }
+]

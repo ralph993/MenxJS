@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 for (const route of routes) {
-  app.use(route.path, route.component);
+  app.use(route.path, route.router);
 }
 
 if (process.env.NODE_ENV === "production") {
