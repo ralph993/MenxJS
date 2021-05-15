@@ -2,7 +2,7 @@
 
 ### A lightweight CLI to create APIs and APIs components in an easy way
 
-# Directory Tree
+## Directory Tree
 
 ```
  app/
@@ -25,7 +25,7 @@
  ├─ package.json
 ```
 
-# CLI Usage
+## CLI Usage
 
 ```
  npm i menx -g
