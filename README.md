@@ -34,10 +34,10 @@
 
 #### // Create a new application
 
-> $ menx -c
+> $ &nbsp; menx &nbsp; -c
 
 ---
 
 #### // Add components to your application
 
-> $ menx -g
+> $ &nbsp; menx &nbsp; -g
